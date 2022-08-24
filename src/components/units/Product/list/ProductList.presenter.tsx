@@ -43,13 +43,14 @@ export default function ProductListUI(props){
             <P.Box 
             key={el._id}
             id={el._id}
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             >
                 <P.Image 
                 src = { el.images?.length !==0 && el.images?.[0] !== ""
                     ? `https://storage.googleapis.com/${el.images?.[0]}`
-                    : ""
-                } 
+                    : '/images/no-image.jpeg'
+                }
+                 
                 
                 />
                         <P.TextBox >

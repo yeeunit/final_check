@@ -55,12 +55,12 @@ export const InputWrapper = styled.div`
 `
 
 export const Input = styled.input`
-width: 787px;
-height: 64px;
-background: #F6F6F6;
-border: 1px solid #CCCCCC;
-border-radius: 5px;
-padding-left: 20px;
+  width: 787px;
+  height: 64px;
+  background: #F6F6F6;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  padding-left: 20px;
 `
 
 export const BtnWrapper = styled.div`
@@ -118,4 +118,9 @@ font-size: 18px;
 text-decoration: underline;
 cursor: pointer;
 
+`
+
+export const Error = styled.span`
+  color: tomato;
+  padding-left: 220px;
 `

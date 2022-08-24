@@ -46,24 +46,19 @@ export default function ProductList(){
   }
 
 
-  const onClickMoveToDetail = (event: MouseEvent<HTMLDivElement>) => {
-    console.log("되는거니?")
+  const onClickMoveToDetail = (el: any) => (event: MouseEvent<HTMLDivElement>) => {
 
-    // if (!(event.currentTarget instanceof HTMLDivElement)) return;
-    // console.log("실패니?")
+    router.push(`/products/${el._id}`)
+    
+    const watchList = JSON.parse(sessionStorage.getItem("watchList") || "[]")
 
-    router.push(`/products/${event.currentTarget.id}`)
-    // const watchList = JSON.parse(sessionStorage.getItem("watchList") || "[]")
-
-    //     const temp = watchList.filter((data: any) => data._id === el._id)
-    //     if(temp.length === 1) {
-    //         return
-    //     }
-    //     setIsActive((prev) => !prev)
-    //     watchList.push(el._id)
-    //     sessionStorage.setItem("watchList", JSON.stringify(watchList));
-
-    //   console.log(event.currentTarget.id)
+    const temp = watchList.filter((data: any) => data._id === el._id)
+        if(temp.length === 1) {
+            return
+        }
+        setIsActive((prev) => !prev)
+        watchList.push(el)
+        sessionStorage.setItem("watchList", JSON.stringify(watchList));
 
   };
 

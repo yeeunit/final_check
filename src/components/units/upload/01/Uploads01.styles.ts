@@ -7,13 +7,17 @@ export const UploadImage = styled.img`
   cursor: pointer;
 `;
 
-export const UploadButton = styled.button`
+export const UploadButton = styled.div`
   width: 180px;
   height: 180px;
   background-color: #bdbdbd;
   margin-right: 24px;
+  text-align: center;
+  line-height: 180px;
   outline: none;
   border: none;
+  display: inline-block;
+
   cursor: pointer;
 `;
 

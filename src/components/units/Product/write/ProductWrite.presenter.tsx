@@ -16,8 +16,8 @@ export default function ProductWriteUI(props){
     return(
         <>
 
-    <form onSubmit = { props.handleSubmit(props.onClickSubmit) } >
         <P.Wrapper>
+    <form onSubmit = { props.handleSubmit(props.onClickSubmit) } >
 
         {props.isOpen && (
         <P.AddressModal visible={true}>
@@ -144,13 +144,13 @@ export default function ProductWriteUI(props){
                 // onClick = {props.isEdit? props.onClickUpdate : props.onClickSubmit}
                 // isActive = {props.isEdit? true : props.isActive}
                 >
-                  
-                등록 </P.RegisterBtn>
+                  { props.isEdit ? "수정하기" : "등록하기" }
+                 </P.RegisterBtn>
 
             </P.BottomWrapper>
+        </form>
         </P.Wrapper>
 
-        </form>
         </>
     )
 }

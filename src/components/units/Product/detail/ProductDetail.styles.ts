@@ -38,6 +38,9 @@ export const ItemBox= styled.div`
 
 export const NameWrapper = styled.div`
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `
 export const Name = styled.span`
   font-weight: 700;
@@ -87,6 +90,7 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
 `
 
 export const LikeBtn = styled.button`
@@ -99,7 +103,8 @@ export const LikeBtn = styled.button`
   font-size: 30px;
   cursor: pointer;
   /* a:visited { color: white; } */
-  a:hover { color : #FFE004;}
+  :hover { color : #FFE004;}
+  a:visited { color: white; }
 
 `;
 
@@ -113,7 +118,7 @@ export const BasketBtn = styled.button`
   cursor: pointer;
   font-weight: 700;
   font-size: 30px;
-  a:visited { color: white; }
+  a { color: white; }
   a:hover { color : #FFE004;}
 
 `;

@@ -20,6 +20,13 @@ export const userInfoState = atom({
   },
 });
 
+
+
+export const isBucketActiveState = atom({
+  key: "isBucketActiveStateKey",
+  default: false
+})
+
 export const visitedPageState = atom({
   key: "visitedPageState",
   default: "/",
@@ -27,5 +34,10 @@ export const visitedPageState = atom({
 
 export const WatchActiveState = atom({
   key: "WatchActiveStateKey",
+  default: false
+})
+
+export const isLoginStatus = atom({
+  key: "isLoginStatusKey",
   default: false
 })

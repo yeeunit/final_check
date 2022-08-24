@@ -16,6 +16,11 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    div.scroll{
+        overflow: hidden;
+        height: 350px;
+        overflow-y: scroll;
+    }
 `;
 
 const Text = styled.div`
@@ -47,22 +52,28 @@ export default function LayoutSidebar() {
         setWatchList(result)
     }, [isActive])
 
-
+console.log(watchList)
     return(
+        
         <>     
         <Wrapper> 
             <Text>최근 본 상품</Text>
 
-            { watchList.map((el) => (
-                el.images?( <Image key = { el._id }>
-                    <img src = { `https://storage.googleapis.com/${el.images[0]}` } alt = "이미지" />
-                </Image>):( <Image></Image>)
-                   
-                )) }
+        <div className="scroll">
 
-           
+             { watchList.map((el) => (
+                ( <Image key = { el._id }>
+                    <img 
+                    style={{width: "85px",
+                        height: "85px;"}}
+                    src = { `https://storage.googleapis.com/${el.images?.[0]}` } alt = "이미지" />
+                </Image>)
+                   
+                )) } 
+        </div>
+{/*            
             <Image></Image> 
-            <Image></Image>
+            <Image></Image> */}
 
         </Wrapper>
         </>    

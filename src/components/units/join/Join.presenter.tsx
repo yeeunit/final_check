@@ -29,7 +29,7 @@ export default function JoinUI(props){
             { ...props.register("email") } 
             />
             </P.InputWrapper>
-            <span>!{ props.formState.errors.email?.message }</span>
+            <P.Error>{ props.formState.errors.email?.message }</P.Error>
 
             <P.InputWrapper>
             <P.Lable>비밀번호</P.Lable>
@@ -39,7 +39,7 @@ export default function JoinUI(props){
             { ...props.register("password") } 
             />
             </P.InputWrapper>
-            <span>!{ props.formState.errors.password?.message }</span>
+            <P.Error>{ props.formState.errors.password?.message }</P.Error>
 
             <P.InputWrapper>
             <P.Lable>비밀번호 확인</P.Lable>
@@ -49,7 +49,7 @@ export default function JoinUI(props){
             { ...props.register("passwordRe") } 
             />
             </P.InputWrapper>
-            <span>!{ props.formState.errors.passwordRe?.message }</span>
+            <P.Error>{ props.formState.errors.passwordRe?.message }</P.Error>
 
 
             <P.InputWrapper>
@@ -60,7 +60,7 @@ export default function JoinUI(props){
             { ...props.register("name") }
             />
             </P.InputWrapper>
-            <span>!{ props.formState.errors.name?.message }</span>
+            <P.Error>{ props.formState.errors.name?.message }</P.Error>
 
 
             <P.BtnWrapper>

@@ -83,11 +83,13 @@ export const Zipcode = styled.input`
   margin-right: 20px;
 `;
 
-export const AddressBtn = styled.button`
+export const AddressBtn = styled.div`
     width: 124px;
     height: 51px;
     background: #000000;
     margin-bottom: 33px;
+    line-height: 50px;
+    text-align: center;
 
   cursor: pointer;
   color: white;
@@ -108,7 +110,7 @@ export const ImageWrapper = styled.div`
   padding: 40px 0;
 `;
 
-export const UploadButton = styled.button`
+export const UploadButton = styled.div`
   width: 180px;
   height: 180px;
   background-color: #bdbdbd;

@@ -1,4 +1,4 @@
-import { HeartOutlined } from "@ant-design/icons"
+import { CloseOutlined, HeartOutlined } from "@ant-design/icons"
 import Link from "next/link"
 import * as P from "./ProductDetail.styles"
 import styled from "@emotion/styled"
@@ -6,6 +6,7 @@ import KakaoMap02 from "../../map/02"
 import { getDate } from "../../../../commons/libraries/getDate"
 import CommentWrite from "../../comment/write/CommentWrite.container"
 import CommentListUI from "../../comment/list/CommentList.presenter"
+import { useState } from "react"
 
 
 const MyIcon = styled(HeartOutlined)`
@@ -13,7 +14,6 @@ const MyIcon = styled(HeartOutlined)`
 
 export default function ProductDetailUI(props){
 
-      
     
     return(
     <>
@@ -30,6 +30,9 @@ export default function ProductDetailUI(props){
                 <P.NameWrapper>
                 <P.Name> 상품 : {" "}{props.data?.fetchUseditem?.name}
                     </P.Name>
+                   <span><P.EditOut onClick = { props.onClickUpdate } /> 
+                   &nbsp; <P.CloseOut onClick = { props.onClickDelete } /></span> 
+
                 </P.NameWrapper>
 
                 <div>
@@ -46,7 +49,6 @@ export default function ProductDetailUI(props){
                 <P.TagsWrapper>
 
                     {props.data?.fetchUseditem.tags
-                        ?.filter((el: string) => el)
                         .map((el: string) => (
                         <P.Tags key={el} >
                             {el}
@@ -65,8 +67,10 @@ export default function ProductDetailUI(props){
                         </P.LikeBtn>
 
                     <P.BasketBtn>
-                    <Link href={"/boards"}>
-                            <a>장바구니</a></Link>
+                    {/* <Link href={"/boards"} > */}
+                            <a onClick={props.onClickBucket(props.data)}>장바구니</a>
+                            {/* <span>{ props.bucketList.length }</span> */}
+                            {/* </Link> */}
                     </P.BasketBtn>
 
                     <P.BuyBtn> 

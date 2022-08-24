@@ -19,21 +19,24 @@ export default function KakaoMap02(props) {
 
         const script = document.createElement("script") // <script></script>
         script.src =
-        "//dapi.kakao.com/v2/maps/sdk.js?appkey=b4231ee4e877b1e937e9152e088001de&libraries=services"
+        "//dapi.kakao.com/v2/maps/sdk.js?appkey=b4231ee4e877b1e937e9152e088001de&libraries=services&autoload=false"
         document.head.appendChild(script) 
 
         script.onload = () => {
             window.kakao.maps.load(() => {
                 const container = document.getElementById("map");
                 const options = {
-                    center: new window.kakao.maps.LatLng(37.552426, 126.988761),
+                    center: new window.kakao.maps.LatLng(37.485666, 126.904260),
                     level: 5,
                 };
                 const map = new window.kakao.maps.Map(container, options);
 
                 const geocoder = new window.kakao.maps.services.Geocoder();
-
-                geocoder.addressSearch(props.address || props.data?.fetchUseditem.useditemAddress?.address, function (result: any, status: any) {
+                
+                console.log(props.address)
+                geocoder.addressSearch(props.address || "",
+                    // props.data?.fetchUseditem.useditemAddress?.address, 
+                    function (result: any, status: any) {
                     if (status === window.kakao.maps.services.Status.OK) {
                         const coords = new window.kakao.maps.LatLng(
                           result[0].y,

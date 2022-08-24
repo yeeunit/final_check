@@ -8,8 +8,9 @@ export const CREATE_USED_ITEM = gql`
       remarks
       contents
       price
-      # tags
+      tags
       images
+      pickedCount
     }
   } 
 `
